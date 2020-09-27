@@ -17,6 +17,16 @@ export class QuoteComponent implements OnInit {
     new Quote(2, 'Buy Cookies', 'I have to buy cookies for the parrot', new Date()),
   ]
 
+  deleteQuote(isComplete, index) {
+    if (isComplete) {
+      let toDelete = confirm(`Are you sure you want to delete ${this.quotes[index].name}?`)
+
+      if (toDelete) {
+        this.quotes.splice(index, 1)
+      }
+    }
+  }
+
   toggleDetails(index) {
     this.quotes[index].showDescription = !this.quotes[index].showDescription;
   }

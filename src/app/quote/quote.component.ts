@@ -9,10 +9,10 @@ import { Quote } from '../quote';
 export class QuoteComponent implements OnInit {
 
   quotes: Quote[] = [
-    new Quote(1, 'Love', 'Spread love everywhere you go', new Date()),
-    new Quote(2, 'Growth', 'When you reach the end of your rope, tie a knot in it and hang on', new Date()),
-    new Quote(3, 'Happiness', 'Whoever is happy will make others happy too', new Date()),
-    new Quote(4, 'Life', 'In the end, it is not the years in your life that count. It is the life in your years', new Date()),
+    new Quote(1, 'Mother Teresa', 'Spread love everywhere you go. Let no one ever come to you without leaving happier', new Date()),
+    new Quote(2, 'Franklin D. Roosevelt', 'When you reach the end of your rope, tie a knot in it and hang on.', new Date()),
+    new Quote(3, 'Margaret Mead', 'Always remember that you are absolutely unique. Just like everyone else.', new Date()),
+    new Quote(4, 'Robert Louis Stevenson', 'Dont judge each day by the harvest you reap but by the seeds that you plant.', new Date()),
   ]
 
   deleteQuote(isComplete, index) {

@@ -1,4 +1,5 @@
 # Quote app
+
 <table>
 <tr>
 <td>
@@ -6,6 +7,9 @@ The Quote app enables its uses to post qoutes and upvote or downvote them
 </td>
 </tr>
 </table>
+
+## Author
+Fred Atei
 
 ## Figma
 Here is the Figma page : https://www.figma.com/file/eYVFUYBJiabO7DlBkz1CnQ/quotes-APP?node-id=3%3A0

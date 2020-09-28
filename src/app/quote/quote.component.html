@@ -4,16 +4,19 @@
 
   <div class="row">
     <div class="col-md-9">
-      <div class="jumbotron">
-        <div *ngFor='let quote of quotes;let i = index'>
-          <div>
-            <h4 id={{i}} appStrikethrough>{{quote.name}}</h4>
-            <button (click)='toggleDetails(i)' class="btn btn-primary">Toggle Details</button>
-          </div>
+      <div *ngFor='let quote of quotes;let i = index'>
+        <div>
+          <h4 id={{i}} appStrikethrough>{{quote.name}} Posted on {{quote.completeDate}}</h4>
+          <button (click)='toggleDetails(i)' class="btn btn-primary">Details</button>
+          <app-quote-detail *ngIf='quote.showDescription' [quote]='quote'></app-quote-detail>
+        </div>
 
-          <div *ngIf='quote.showDescription'>
-            <app-quote-detail [quote]='quote' (isComplete)='deleteQuote($event,i)'></app-quote-detail>
-          </div>
+        <div *ngIf='quote.showDescription'>
+          <app-quote-detail [quote]='quote' (isComplete)='deleteQuote($event,i)'></app-quote-detail>
+          <h4 *ngIf='quote === highestUpVote()' appHighlight>{{quote.quote}}</h4>
+          <button (click)='addUpVote(i)' class="btn btn-success">Like</button>
+
+          <button (click)='addDownVote(i)' class="btn btn-danger">Dislike</button>
         </div>
       </div>
     </div>
